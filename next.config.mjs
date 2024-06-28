@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
-// next.config.js
-
-import path from 'path';
-
-export function webpack(config) {
-    // Add file-loader to handle mp4 files
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  webpack: (config) => {
     config.module.rules.push({
-        test: /\.mp4$/,
-        use: {
-            loader: 'file-loader',
-            options: {
-                outputPath: 'static/media',
-                name: '[name].[ext]'
-            }
+      test: /\.mp4$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          outputPath: 'static/media',
+          name: '[name].[ext]'
         }
+      }
     });
-
     return config;
-}
+  }
+};
 
-
+export default nextConfig;
