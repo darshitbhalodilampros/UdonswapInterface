@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Actay";
+  src: url("./fonts/ActayWide-Bold.otf");
+}
+body{
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+  box-sizing: border-box;
+  background: #1e1e1e;
+}
