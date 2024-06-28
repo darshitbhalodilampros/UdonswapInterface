@@ -3,7 +3,7 @@
 
 import path from 'path';
 
-export function webpack(config) {
+function webpack(config) {
     // Add file-loader to handle mp4 files
     config.module.rules.push({
         test: /\.mp4$/,
@@ -15,8 +15,16 @@ export function webpack(config) {
             }
         }
     });
-
     return config;
 }
 
+const nextConfig = {
+    output: 'export',
+    reactStrictMode: true,
+    images: {
+      unoptimized: true,
+    },
+    trailingSlash: true,
+  }
 
+module.exports = {nextConfig, webpack}
